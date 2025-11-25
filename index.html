@@ -1,0 +1,119 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet"href="ohmsLaw.css">
+            <link rel="manifest" href="manifest.json">
+            <title>ohmsLaw calculator</title>
+            
+        </head>
+        <body>
+            <div class="container">
+            <div>
+                <p class="PP">OHMS LAW CALCULATOR</p>
+                <label class="pp">ANSWER</label>
+                <br>
+                <div  id="answer"> </div>
+            <input type="number" placeholder="enter current" id="current">
+            <br>
+            <input type="number" placeholder="enter resistor" id="resistor">
+            <br>
+            <input type="number" placeholder="enter voltage" id="voltage">
+            <br>
+
+   
+        <div class="rbtn">
+            <button onclick="ohmsLaw2()">current</button>
+            <button  onclick="ohmsLaw()">voltage</button>
+            <button class="rbtn" onclick="ohmsLaw3()">resistor</button>
+            <button onclick="
+            const clear=document.getElementById('answer')
+            clear.textContent='' 
+            const clearInput=document.getElementById('voltage')
+            clearInput.value='' 
+            const clearInput2=document.getElementById('resistor')
+            clearInput2.value='' 
+            const clearInput3=document.getElementById('current')
+            clearInput3.value=''"class="clear">reset</button>
+        </div>   
+      
+        </div>
+        </div>
+        </body>
+        <script>
+            if("serviceWorker" in navigator ){
+              navigator.serviceWorker.register('service-worker.js')
+            }
+
+        function ohmsLaw (){
+            const currentInput = document.getElementById("current");
+        const answerDisplay = document.getElementById("answer");
+        const resistorInput = document.getElementById("resistor");
+        const volts ="volts";
+        const voltageInput =document.getElementById("voltage");
+        currentInput.input  =current;
+        resistorInput.input  = resistor;
+        voltageInput.input =voltage;
+        if((resistor.value || current.value )<= 0){
+            answerDisplay.classList.add("message");
+            answerDisplay.style.fontSize="12px";
+             answerDisplay.style.fontWeight="600";
+        answerDisplay.textContent = "please enter resistor and current value to display voltage" ;
+        }else if((resistor.value || current.value) >= 1) {
+   answerDisplay.classList.remove("message");
+   answerDisplay.style.fontWeight="800";
+   answerDisplay.style.fontSize="20px";
+            answerDisplay.textContent =(( currentInput.value * resistorInput.value).toFixed(2)) + volts;
+        }
+
+        }
+        function  ohmsLaw2(){
+            const currentInput = document.getElementById("current");
+            const answerDisplay = document.getElementById("answer");
+        const resistorInput = document.getElementById("resistor");
+        const Ahms ="Ahms";
+        currentInput.input  =current;
+        resistorInput.input  = resistor;
+
+        const voltageInput =document.getElementById("voltage")
+        if( (voltageInput.value || resistorInput.value)<=0){
+            answerDisplay.textContent="please enter voltage and resistor value to display curremt";
+            answerDisplay.classList.add("message");
+            answerDisplay.style.fontSize="12px";
+             answerDisplay.style.fontWeight="600";
+             }else if( (voltageInput.value || resistorInput.value)>=1){
+            answerDisplay.classList.remove("message");
+            answerDisplay.style.fontWeight="800";
+              answerDisplay.style.fontSize="20px";
+            answerDisplay.textContent =(( voltageInput.value / resistor.value ).toFixed(5))+ Ahms;
+             
+        }
+        
+       
+        }
+        function ohmsLaw3(){
+            const currentInput = document.getElementById("current");
+        const answerDisplay = document.getElementById("answer");
+        const resistorInput = document.getElementById("resistor");
+        const ohms ="ohms";
+        const voltageInput =document.getElementById("voltage");
+        if( (voltageInput.value || resistorInput.value) <=0){
+        answerDisplay.textContent="please enter voltage and current value yo display resistor";
+        answerDisplay.classList.add("message");
+        answerDisplay.style.fontSize="12px";
+             answerDisplay.style.fontWeight="600";
+        }else if((voltageInput.value || resistorInput.value) >=1){
+            answerDisplay.classList.remove("message");
+            answerDisplay.style.fontWeight="800";
+             answerDisplay.style.fontSize="20px";
+            answerDisplay.textContent =((voltageInput.value /currentInput.value).toFixed(5))+ ohms;
+        }
+
+        }
+   
+        
+       
+        
+        </script>
+        </html>

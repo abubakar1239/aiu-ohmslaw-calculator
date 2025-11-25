@@ -1,0 +1,20 @@
+{
+  "name": "ohm'slaw calculator",
+  "short_name": "ohm'slaw calculator",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color":"rgb2137, 273, 273)",
+  "theme_color": "white",
+  "icons": [
+    {
+      "src": "ohmslaw.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "ohmslaw.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
